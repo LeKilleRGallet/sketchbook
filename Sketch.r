@@ -28,3 +28,9 @@ mean(ceosal1$salary)
 median(ceosal1$salary)   
 var(ceosal1$salary)      
 sd(ceosal1$salary)       
+
+tiempo <- c(30,10,15,5,6,12,15)
+dia <- c("lunes","Martes","Miercoles","Jueves", "Viernes", "Sabado", "Domingo")
+
+T_tiempo <- sum(tiempo)
+T_tiempo
