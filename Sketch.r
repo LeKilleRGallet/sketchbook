@@ -34,3 +34,8 @@ dia <- c("lunes","Martes","Miercoles","Jueves", "Viernes", "Sabado", "Domingo")
 
 T_tiempo <- sum(tiempo)
 T_tiempo
+
+install.packages("wooldridge")
+library(wooldridge)
+data('wage1')
+View(wage1)
