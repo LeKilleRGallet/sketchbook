@@ -1,8 +1,7 @@
-odd = list(filter(lambda x: x%3, range(1, 20)))
 
 
-print(odd)
+ans = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']
 
-square = list(map(lambda x: x**2, range(1, 11)))
+#print ans like a string and underliner
 
-print(square)
+print(' '.join(ans))
