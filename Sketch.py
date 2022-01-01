@@ -1,7 +1,13 @@
+def decorate(func):
+    def inner():
+        print("hi")
+        func()
+        print("bye")
+    return inner
 
+@decorate
+def test():
+    print("test")
 
-ans = ['a', 'b', 'c', 'd', 'e', 'a', 'b', 'c', 'd', 'e']
+test()
 
-#print ans like a string and underliner
-
-print(' '.join(ans))
