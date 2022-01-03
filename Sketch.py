@@ -1,21 +1,21 @@
-#create a superclass of a rectangle and a subclass of a square
-class Rectangle:
-    def __init__(self,height,width):
-        self.height = height
-        self.width = width
-    def area(self):
-        return self.height * self.width
-    def perimeter(self):
-        return 2 * self.height + 2 * self.width
+class Person:
+    def __init__(self,name):
+        self.name = name
+    def talk(self):
+        print("Hi, I'm " + self.name)
+    def move(self):
+        print("I'm walking")
 
-class Square(Rectangle):
-    def __init__(self,side):
-        super().__init__(side,side)
+class Cyclist(Person):
+    # def __init__(self,name):
+    #     super().__init__(name)
+    def move(self):
+        print("I'm cycling")
 
-square = Square(5)
-print(square.area())
-print(square.perimeter())
+person = Person("John")
+person.talk()
+person.move()
 
-rectangle = Rectangle(5,10)
-print(rectangle.area())
-print(rectangle.perimeter())
+cyclist = Cyclist("Jane")
+cyclist.talk()
+cyclist.move()
