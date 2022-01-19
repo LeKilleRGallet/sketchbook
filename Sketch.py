@@ -1,46 +1,26 @@
-import numpy as np
-import random
+n = int(input())
 
-# rlist=[]
+def padovan(num):
+    padovan_prev = 0
+    padovan_secprev = 0
+    padovan_thirprev = 0
+    for i in range(num+1):
+        if i == 0:
+            padovan = 1
+        elif i == 1:
+            padovan = 1
+        elif i == 2:
+            padovan = 1
+        else:
+            padovan = padovan_thirprev + padovan_secprev
+        padovan_thirprev = padovan_secprev
+        padovan_secprev = padovan_prev
+        padovan_prev = padovan
+        
 
-# l = [9]*9
-# print(l)
-# l=[*range(1,10)]
+    return padovan
+    
 
-# for _ in range(1,10):
-#     rlist = random.sample([*range(1,10)],counts =l,k=9)
-#     print(rlist)
-#     random.shuffle(l)
+n = padovan(n)
 
-# print(np.array([[[4, 3, 2, 1], [1, 2, 4, 3], [3, 4, 1, 2], [2, 1, 3, 4]]]))
-
-# print(np.array([[2, 1, 3, 4], [4, 3, 1, 2], [1, 4, 2, 3], [3, 2, 4, 1]]))
-# if 1:
-#     print('aaa')
-
-# row, col = random.randint(0,3), random.randint(0,3)
-
-# print('row={}'.format(row), 'col={}'.format(col))
-
-# l = 1
-
-# print(l)
-
-# k = l
-
-# print(k)
-
-# l = 0
-
-# print(l)
-
-# print(k)
-
-
-def run():
-    print(9/2)
-    print(9//2)
-
-
-if __name__ == "__main__":
-    run()
+print(n)
