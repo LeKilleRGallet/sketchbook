@@ -1,26 +1,12 @@
-n = int(input())
+import numpy as np
 
-def padovan(num):
-    padovan_prev = 0
-    padovan_secprev = 0
-    padovan_thirprev = 0
-    for i in range(num+1):
-        if i == 0:
-            padovan = 1
-        elif i == 1:
-            padovan = 1
-        elif i == 2:
-            padovan = 1
-        else:
-            padovan = padovan_thirprev + padovan_secprev
-        padovan_thirprev = padovan_secprev
-        padovan_secprev = padovan_prev
-        padovan_prev = padovan
-        
+a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-    return padovan
-    
+# b = np.array(a)
+c=[_[:] for _ in a]
 
-n = padovan(n)
+a[1][1] = 10
 
-print(n)
+print(c)
+
+print(a)
