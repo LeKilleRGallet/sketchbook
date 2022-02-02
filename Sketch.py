@@ -1,12 +1,20 @@
-# import numpy as np
+import time
 
-a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+def loading():
 
-# b = np.array(a)
-c=[_[:] for _ in a]
+    print('\n')
+    for _ in range(0, 100):
 
-a[1][1] = 10
+        if _%4 == 0:
+            a = '/'
+        elif _%4 == 1:
+            a = '—'
+        elif _%4 == 2:
+            a = '\\'
+        else:
+            a = '|'
+        
+        print('\tloading ' + a, end='\r')
+        time.sleep(1/10)
 
-print(c)
-
-print(a)
+loading()

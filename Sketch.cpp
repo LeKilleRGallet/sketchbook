@@ -1,15 +1,23 @@
 #include <iostream>
+using namespace std;
 
+void increase(void* data, int psize){
+    if (psize == sizeof(char))
+        {char* pchar;
+        pchar = (char*)data;
+        ++(*pchar);}
+    else if (psize == sizeof(int))
+        {int* pint;
+        pint== (int*)data;
+        ++(*pint);}
+    
+}
 
 int main(){
-    int sum;
-    int i;
-    int n;
-    scanf("%d", &n);
-    scanf("%d", &i);
-    sum = i+n;
-    printf("la suma es %d", sum);
-
+    char c = 'a';
+    int i = 1;
+    increase(&c, sizeof(c));
+    increase(&i, sizeof(i));
+    cout << c << " " << i << endl;
     return 0;
-    
 }
