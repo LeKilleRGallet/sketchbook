@@ -1,22 +1,27 @@
 #include <stdio.h>
-
-
-int sum(int& a, int& b) {
-
-    a = a+1;
-    b = b+1;
-    return a + b;
-}
+#include <stdlib.h>
 
 int main(){
-    int i;
     int n;
-    printf("n: ");
-    scanf("%d", &n);
-    printf("\ni: ");
-    scanf("%d", &i);
-    int sumx = sum(n, i);
-    printf("n: %d\ni: %d\nsum: %d", n, i, sumx);
+    scanf("%d",&n);
+    int **matrix = (int**)malloc(n*sizeof(int*));
+    for(int i=0;i<n+1;i++){
+        matrix[i] = (int*)malloc(i*sizeof(int));
+    }
+    matrix[0][0]=1;
+    for(int i=1;i<n+1;i++){
+        for(int j=0;j<i;j++){
+            matrix[i][j] = matrix[i-1][j-1] + matrix[i-1][j];
+        }
+    }
+    for(int i=1;i<n+1;i++){
+        for(int j=0;j<i;j++){
+            printf("%d\t",matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+
 
     return 0;
 }
