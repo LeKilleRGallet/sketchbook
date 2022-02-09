@@ -1,10 +1,16 @@
+import time
 
-import math
+def loading():
+    for i in range(30):
+        if i%4==0:
+            r='/'
+        elif i%4==1:
+            r='—'
+        elif i%4==2:
+            r='\\'
+        elif i%4==3:
+            r='|'
+        print('loading...' + r,end='\r')
+        time.sleep(0.1)
 
-a = math.sqrt(2)
-
-print(a)
-
-b=(2)**(1/2)
-
-print(b)
+loading()
