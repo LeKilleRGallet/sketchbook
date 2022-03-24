@@ -1,28 +1,43 @@
-import random
+white=0
+red=1
+green=2
+blue=3
+yellow=4
+orange=5
 
-def knapsack(capacity, weights, values):
-    n = len(values)
-    dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)] #full 0 2d array
-    for i in range(1, n + 1):
-        for j in range(1, capacity + 1):
-            if j >= weights[i - 1]:
-                dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weights[i - 1]] + values[i - 1])
-                # i.e capacity = 3, weights=[1,2]
-                # 0  0  0
-                # 0  1  1
-                # 0  1  3
-                # 0  1  3
-            else:
-                dp[i][j] = dp[i - 1][j]
+white_face=[[white,white,white],[white,white,white],[white,white,white]]
+red_face=[[red,red,red],[red,red,red],[red,red,red]]
+green_face=[[green,green,green],[green,green,green],[green,green,green]]
+blue_face=[[blue,blue,blue],[blue,blue,blue],[blue,blue,blue]]
+yellow_face=[[yellow,yellow,yellow],[yellow,yellow,yellow],[yellow,yellow,yellow]]
+orange_face=[[orange,orange,orange],[orange,orange,orange],[orange,orange,orange]]
 
-    return dp[n][capacity]
+mid_face=[red_face,green_face,blue_face,yellow_face]
+
+for i in range(3):
+    print('\t', end = '')
+    for j in range(3):
+        print(white_face[i][j],end=" ")
+    print()
+
+print('-'*30)
 
 
-def main():
-    capacity = random.randint(1, 20)
-    weights = [random.randint(1, 10) for _ in range(random.randint(1, 20))]
-    values = [random.randint(1, 10) for _ in range(len(weights))]
-    print(knapsack(capacity, weights, values))
+j = 0
+while j < 3:
+    i=0
+    while i < 4:
+        
+        for k in range(3):
+            print(mid_face[i][j][k],end=" ")
+        print('|', end = '')
+        i += 1
+    print()
+    j += 1
+print('-'*30)
 
-if __name__ == '__main__':
-    main()
+for i in range(3):
+    print('\t', end = '')
+    for j in range(3):
+        print(orange_face[i][j],end=" ")
+    print()
